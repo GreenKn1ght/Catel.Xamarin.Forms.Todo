@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<!--Main-->
+		<Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
+		<BuildSolutionDirectory>$(MSBuildProjectDirectory)</BuildSolutionDirectory>
+		<RootDirectory>$([System.IO.Path]::Combine('$(BuildSolutionDirectory)','..\'))</RootDirectory>
+		<SourceDirectory>$([System.IO.Path]::Combine('$(RootDirectory)','src'))</SourceDirectory>		
+
+		<!-- solutions-->
+		<SolutionPath>$([System.IO.Path]::Combine($(SourceDirectory), "Catel.Xamarin.Forms.Todo.sln"))</SolutionPath>
+		<AndroidAppPath>$([System.IO.Path]::Combine($(SourceDirectory), "Catel.Xamarin.Forms.Todo.Android\Catel.Xamarin.Forms.Todo.Android.csproj"))</AndroidAppPath>
+	</PropertyGroup>	
+</Project>

@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Catel.Fody" Version="3.9.0" />
+    <PackageReference Include="Catel.MVVM.Xamarin.Forms" Version="5.9.0" />
+    <PackageReference Include="JetBrains.Annotations" Version="2018.3.0" />
+    <PackageReference Include="Xamarin.Forms" Version="3.5.0.129452" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\CreateTodoItemView.xaml.cs">
+      <DependentUpon>CreateTodoItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TodoListView.xaml.cs">
+      <DependentUpon>TodoListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\EditTodoItemView.xaml.cs">
+      <DependentUpon>EditTodoItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TodoItemView.xaml.cs">
+      <DependentUpon>TodoItemView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\TodoListView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EditTodoItemView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TodoItemView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

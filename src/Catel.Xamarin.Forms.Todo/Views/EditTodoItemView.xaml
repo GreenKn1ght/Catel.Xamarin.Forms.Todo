@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<todo:ContentPage x:Class="Catel.Xamarin.Forms.Todo.Views.EditTodoItemView"
+                       xmlns="http://xamarin.com/schemas/2014/forms"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:todo="clr-namespace:Catel.Xamarin.Forms.Todo"
+                       Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding SaveCommand}" 
+                     Icon="baseline_save_white_24.png" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="Name"
+                   Text="{Binding Name}" />
+            <Entry Placeholder="Description"
+                   Text="{Binding Description}" />
+        </StackLayout>
+    </ContentPage.Content>
+</todo:ContentPage>
